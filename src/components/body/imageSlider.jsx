@@ -14,15 +14,15 @@ import { useSwipeable } from "react-swipeable";
 const MyCollection = [
   {
     label: "Body Splash",
-    imgPath: "/images/Vanilla-mockup.jpg",
+    imgPath: "./images/Vanilla-mockup.jpg",
   },
   {
     label: "Acne Cream",
-    imgPath: "/images/Acne-cream-circular.png",
+    imgPath: "./images/Acne-cream-circular.png",
   },
   {
     label: "Deodorant",
-    imgPath: "/images/deodorant.png",
+    imgPath: "./images/deodorant.png",
   },
 ];
 
@@ -78,11 +78,11 @@ const ImageSlider = () => {
             height: 50,
             display: "flex",
             paddingLeft: theme.spacing(4),
-            backgroundColor: theme.palette.background.default,
             alignItems: "center",
+            backgroundColor: "#a8d4a1",
           }}
         >
-          <p className=" text-2xl font-bold text-emerald-950">
+          <p className=" text-3xl font-bold text-emerald-950">
             {MyCollection[index].label}
           </p>
         </Paper>

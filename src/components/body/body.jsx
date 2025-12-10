@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Body() {
   return (
     <div className=" mt-5 mx-10">
-      <h1 className="text-xl font-bold mb-3 text-center">
+      <h1 className="text-xl font-bold mb-3 text-center -mx-8">
         “Everyone deserves its own Cadenza - a moment to shine”
       </h1>
       <div className="flex justify-center">
@@ -18,7 +18,7 @@ export default function Body() {
       <div className="flex flex-col md:flex-row gap-7 mt-18 items-center ">
         <Link to="/vanilla">
           <TiltedCard
-            imageSrc="/images/Vanilla-mockup.jpg"
+            imageSrc="./images/Vanilla-mockup.jpg"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Body Splash"
             containerHeight="15rem"
@@ -40,7 +40,7 @@ export default function Body() {
 
         <Link to="/baccaraat">
           <TiltedCard
-            imageSrc="/images/Baccaraat-rouge-mockups.jpg"
+            imageSrc="./images/Baccaraat-rouge-mockups.jpg"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Baccaraat"
             containerHeight="15rem"
@@ -61,7 +61,7 @@ export default function Body() {
         </Link>
         <Link to="/monosparkle">
           <TiltedCard
-            imageSrc="/images/Monosparkle-mockup.jpg"
+            imageSrc="./images/Monosparkle-mockup.jpg"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Monosparkle"
             containerHeight="15rem"
@@ -88,7 +88,7 @@ export default function Body() {
       <div className=" flex  gap-7 mt-16 justify-center">
         <Link to="/deodorant">
           <TiltedCard
-            imageSrc="/images/deodorant.png"
+            imageSrc="./images/deodorant.png"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Body Lotion"
             containerHeight="15rem"
@@ -115,7 +115,7 @@ export default function Body() {
       <div className=" flex  gap-7 mt-16 justify-center">
         <Link to="/acneCream">
           <TiltedCard
-            imageSrc="/images/Acne-cream-circular.png"
+            imageSrc="./images/Acne-cream-circular.png"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Body Lotion"
             containerHeight="15rem"

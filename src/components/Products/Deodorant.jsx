@@ -1,4 +1,5 @@
 import TiltedCard from "../body/TiltedCard";
+
 export default function Deodorant() {
   const items = [
     {
@@ -47,61 +48,133 @@ export default function Deodorant() {
       use: "Cooling effect, refreshing scent, and antibacterial properties. ",
     },
   ];
+
+  const benefits = [
+    "Natural odor protection",
+    "Moisturizes and softens skin",
+    "Long-lasting freshness",
+    "Antibacterial properties",
+    "Absorbs sweat effectively",
+  ];
+
+  const howToUse = [
+    "Apply to clean, dry underarms",
+    "Use a small amount and spread evenly",
+    "Allow to absorb for a few minutes",
+    "Use daily or as needed",
+    "Store in a cool, dry place",
+  ];
+
   return (
     <>
-      <div className="flex flex-col items-center p-5 gap-3 ">
-        <h1 className="text-3xl font-bold text-emerald-950">Deodorant Stick</h1>
-        <p className="text-center">
-          A natural deodorant that protects against unpleasant odor while
-          moisturizing the skin and leaving a refreshing feel throughout the
-          day.
-        </p>
-        <div className=" flex justify-center rounded-2xl">
-          <TiltedCard
-            imageSrc="/images/deodorant.png"
-            altText="Kendrick Lamar - GNX Album Cover"
-            captionText="Body Lotion"
-            containerHeight="15rem"
-            containerWidth="15rem"
-            imageHeight="15rem"
-            imageWidth="15rem"
-            rotateAmplitude={12}
-            scaleOnHover={1.2}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={true}
-            overlayContent={
-              <p className="tilted-card-demo-text text-2xl font-bold p-1 text-green-950 ml-1 ">
-                Deodorant
-              </p>
-            }
-          />
+      {/* Hero Section */}
+      <div className=" text-white py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Deodorant Stick
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              A natural deodorant that protects against unpleasant odor while
+              moisturizing the skin and leaving a refreshing feel throughout the
+              day.
+            </p>
+          </div>
         </div>
       </div>
-      {/* details */}
-      <div className=" sm:mr-7 mr-1 p-5 ">
-        <div>
-          <h1 className=" text-2xl font-bold">Active Ingredients</h1>
-          <ol className="last:mb-5">
-            {items.map((item, index) => (
-              <li key={index} className="mt-1.5 text-lg font-medium">
-                {item.title}
-              </li>
-            ))}
-          </ol>
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-white">
+        {/* Product Image and Overview */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="flex justify-center">
+              <TiltedCard
+                imageSrc="./images/deodorant.png"
+                altText="Deodorant Stick Product"
+                captionText="Natural Deodorant"
+                containerHeight="16rem"
+                containerWidth="16rem"
+                imageHeight="16rem"
+                imageWidth="16rem"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                  <p className="tilted-card-demo-text text-2xl font-bold p-2 text-white">
+                    Deodorant
+                  </p>
+                }
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-emerald-900 mb-6">
+                Key Benefits
+              </h2>
+              <ul className="space-y-3">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-emerald-600 mr-3">✓</span>
+                    <span className="text-lg text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <hr />
-        {/* uses */}
-        <div>
-          <h1 className="text-2xl font-bold mt-3">Uses of Each Ingredient</h1>
-          <ol className="last:mb-5">
+
+        {/* How to Use */}
+        <div className="bg-emerald-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-emerald-900 mb-12">
+              How to Use
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {howToUse.map((step, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                  <div className="text-2xl font-bold text-emerald-600 mb-3">
+                    {index + 1}
+                  </div>
+                  <p className="text-gray-700">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Ingredients Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl font-bold text-center text-emerald-900 mb-12">
+            Ingredients & Their Benefits
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {items.map((item, index) => (
-              <li key={index} className="mt-1.5">
-                <div className="text-lg font-medium">- {item.title} :</div>
-                <div className=" font-normal">{item.use}</div>
-              </li>
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-md p-6 border-l-4 border-emerald-500"
+              >
+                <h4 className="text-lg font-semibold text-emerald-900 mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-gray-600">{item.use}</p>
+              </div>
             ))}
-          </ol>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="bg-emerald-900 text-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-4">Stay Fresh Naturally</h2>
+            <p className="text-xl mb-8">
+              Experience the power of our natural deodorant formula for all-day
+              protection.
+            </p>
+            <button className="bg-white text-emerald-900 px-8 py-3 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">
+              Shop Now
+            </button>
+          </div>
         </div>
       </div>
     </>

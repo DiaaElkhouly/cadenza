@@ -1,6 +1,120 @@
 @import "tailwindcss";
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Marcellus&display=swap');
+
+/* CSS Variables for CADENZA theme - Luxury Green */
+:root {
+  --color-emerald-950: #022c22;
+  --color-emerald-900: #064e3b;
+  --color-emerald-800: #065f46;
+  --color-emerald-700: #047857;
+  --color-emerald-600: #059669;
+
+  /* Background colors */
+  --color-bg-dark: #0a1f1a;
+  --color-bg-light: #112f28;
+
+  /* Text colors */
+  --color-text-light: #d1fae5;
+  --color-text-muted: #a7f3d0;
+
+  /* Accent */
+  --color-gold: #d4a853;
+  --color-cloud: #fce7f3;
+}
+
 body {
-  color: rgb(214, 214, 214);
-  background: linear-gradient(135deg, #4b8b6d 0%, #1b483d 100%);
-  width: 100vw;
+  color: var(--color-text-light);
+  background: linear-gradient(135deg, var(--color-emerald-950) 0%, var(--color-bg-dark) 100%);
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Marcellus', serif;
+  overflow-x: hidden;
+}
+
+/* Ensure html doesn't cause overflow */
+html {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-emerald-700);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-emerald-600);
+}
+
+/* Utility classes */
+.acme-font {
+  font-family: 'Acme', sans-serif;
+}
+
+.marcellus-font {
+  font-family: 'Marcellus', serif;
+}
+
+/* Custom theme colors */
+@theme {
+  --color-cadenzaBlack: #0a1f1a;
+  --color-baccarat: #064e3b;
+  --color-vanilla: #d1fae5;
+  --color-sparkle: #a7f3d0;
+  --color-cloud: #d1fae5;
+}
+
+/* Body component styles */
+.tilted-card-demo-text {
+  font-family: 'Acme', sans-serif;
+}
+
+/* Additional custom styles */
+.bg-cadenzaBlack {
+  background-color: #0a1f1a;
+}
+
+.text-baccarat {
+  color: #064e3b;
+}
+
+.text-vanilla {
+  color: #d1fae5;
+}
+
+.text-sparkle {
+  color: #a7f3d0;
+}
+
+.text-cloud {
+  color: #d1fae5;
+}
+
+.bg-baccarat {
+  background-color: #064e3b;
+}
+
+.border-baccarat {
+  border-color: #064e3b;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
 }

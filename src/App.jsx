@@ -2,20 +2,23 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Body from "./components/body/body";
 import Footer from "./components/Footer/Footer";
-// router
-import Vanilla from "./components/Products/Vanilla";
-import Baccaraat from "./components/Products/Baccaraat";
-import AcneCream from "./components/Products/AcneCream";
-import Deodorant from "./components/Products/Deodorant";
-import Monosparkle from "./components/Products/Monosparkle";
+import ProductPage from "./components/ProductPage/ProductPage";
 import OurMembers from "./components/Footer/OurMembers";
 import ScrollToTop from "./components/ScrollToTop";
+import { getProductById } from "./data/products";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
+
+// Wrapper component to get product from URL params
+function ProductWrapper() {
+  const { productName } = useParams();
+  const product = getProductById(productName);
+  return <ProductPage product={product} />;
+}
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <ScrollToTop />
       <Routes>
         <Route
@@ -29,51 +32,11 @@ function App() {
           }
         />
         <Route
-          path="/vanilla"
+          path="/:productName"
           element={
             <>
               <Header />
-              <Vanilla />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/baccaraat"
-          element={
-            <>
-              <Header />
-              <Baccaraat />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/monosparkle"
-          element={
-            <>
-              <Header />
-              <Monosparkle />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/deodorant"
-          element={
-            <>
-              <Header />
-              <Deodorant />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/acneCream"
-          element={
-            <>
-              <Header />
-              <AcneCream />
+              <ProductWrapper />
               <Footer />
             </>
           }
@@ -89,7 +52,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </div>
   );
 }
 
